@@ -12,9 +12,8 @@ const app = express();
 // ─── Security Middleware ───────────────────────────────────────────────────────
 app.use(helmet());
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://your-frontend-domain.com'
-    : ['http://localhost:3000', 'http://localhost:5173', 'http://127.0.0.1:5500'],
+  // Dynamically allows any frontend origin (like Vercel) instead of blocking them
+  origin: true,
   credentials: true,
 }));
 
