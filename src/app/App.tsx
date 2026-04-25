@@ -5,8 +5,8 @@ import { AuthProvider } from './AuthContext';
 export default function App() {
   return (
     <AuthProvider>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="w-[360px] h-[800px] bg-white overflow-hidden shadow-2xl rounded-2xl">
+      <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center">
+        <div className="w-full min-h-screen md:min-h-0 md:h-auto md:max-w-7xl bg-white md:shadow-2xl md:rounded-xl overflow-hidden flex flex-col">
           <RouterProvider router={router} />
         </div>
       </div>
