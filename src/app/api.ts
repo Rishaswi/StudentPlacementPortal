@@ -1,9 +1,12 @@
 // Central API client for the Placement Portal backend
 // Uses relative path so Vite dev server proxy forwards to backend on port 5000
 
-const BASE_URL = '/api';
+// Update this to your deployed Render URL:
+// @ts-ignore
+const BASE_URL = (import.meta as any).env?.PROD 
+  ? 'https://student-placement-portal-qnes.onrender.com/api' 
+  : '/api';
 
-// ── Token helpers ─────────────────────────────────────────────
 export const getToken = (): string | null => localStorage.getItem('pp_token');
 export const setToken = (token: string) => localStorage.setItem('pp_token', token);
 export const removeToken = () => localStorage.removeItem('pp_token');
